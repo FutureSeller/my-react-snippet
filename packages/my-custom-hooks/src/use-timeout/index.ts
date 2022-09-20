@@ -1,0 +1,24 @@
+import { useEffect } from "react";
+import { useCallbackRef } from "../use-callback-ref";
+
+export function useTimeout(
+  callback: (...args: any[]) => void,
+  delay: number | null
+) {
+  const fn = useCallbackRef(callback);
+
+  useEffect(() => {
+    if (delay == null) return;
+
+    let timeoutId: number | null = null;
+    timeoutId = window.setTimeout(() => {
+      fn();
+    }, delay);
+
+    return () => {
+      if (timeoutId) {
+        window.clearTimeout(timeoutId);
+      }
+    };
+  }, [delay, fn]);
+}
