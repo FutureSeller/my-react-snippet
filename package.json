@@ -12,10 +12,14 @@
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "clean": "turbo run clean"
+    "clean": "turbo run clean",
+    "test": "turbo run test",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "eslint-config-custom": "*",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
     "prettier": "latest",
     "turbo": "latest"
   },
@@ -23,5 +27,16 @@
     "node": ">=14.0.0"
   },
   "dependencies": {},
-  "packageManager": "yarn@1.22.19"
+  "packageManager": "yarn@1.22.19",
+  "lint-staged": {
+    "apps/**/*.{js,ts,jsx,tsx}": [
+      "eslint --fix"
+    ],
+    "packages/{ui,my-custom-hooks}/**/*.{js,ts,jsx,tsx}": [
+      "eslint --fix"
+    ],
+    "examples/**/*{js,ts,jsx,tsx}": [
+      "eslint --fix"
+    ]
+  }
 }
