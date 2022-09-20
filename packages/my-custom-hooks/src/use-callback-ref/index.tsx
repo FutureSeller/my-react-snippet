@@ -8,7 +8,7 @@ export function useCallbackRef<T extends (...args: any[]) => any>(
 
   React.useEffect(() => {
     ref.current = fn;
-  }, [fn]);
+  });
 
   // eslint-disable-next-line
   return React.useCallback(((...args) => ref.current?.(...args)) as T, deps);
