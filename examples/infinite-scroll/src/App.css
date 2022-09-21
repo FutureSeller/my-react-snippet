@@ -1,0 +1,16 @@
+#root {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.card {
+  padding: 2em;
+  background-color: #1a1a1a;
+}
+
+.card:not(:last-child) {
+  margin-bottom: 2em;
+}
