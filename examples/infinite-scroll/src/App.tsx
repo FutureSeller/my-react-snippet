@@ -27,7 +27,7 @@ function App() {
       setPosts((prevComments) => prevComments.concat(data));
       setHasMore(data.length > 0);
     }
-  }, [status, data]);
+  }, [data]);
 
   return (
     <div className="App">

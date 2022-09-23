@@ -19,7 +19,7 @@ export function useInView({ options }: UseInViewProps) {
         setObserver(observer);
       }
     },
-    [options]
+    [options.root, options.rootMargin, options.threshold]
   );
 
   return { measureRef, isIntersecting, observer };
