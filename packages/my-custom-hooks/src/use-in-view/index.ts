@@ -9,7 +9,7 @@ export function useInView({ options }: UseInViewProps) {
   const [isIntersecting, setIsIntersecting] = useState(false);
 
   const measureRef = useCallback(
-    (node) => {
+    (node: Element | null) => {
       if (node) {
         const observer = new IntersectionObserver(([entry]) => {
           setIsIntersecting(entry.isIntersecting);
