@@ -3,6 +3,8 @@ import "./AnnotatedScrollBar.css";
 import { useState, useEffect, useRef } from "react";
 import { clsx } from "clsx";
 
+import { useEventListener } from "my-custom-hooks";
+
 const ANNOTATED_BAR_HEIGHT = 32;
 
 export function AnnotatedScrollBar() {
@@ -18,36 +20,31 @@ export function AnnotatedScrollBar() {
     distance: "0px",
   });
 
-  useEffect(() => {
-    const targetRefCurrent = containerRef.current;
+  useEventListener({
+    type: "scroll",
+    element: containerRef,
+    listener: () => {
+      const targetRef = containerRef.current;
+      if (!targetRef) {
+        return;
+      }
 
-    if (targetRefCurrent) {
-      const containerHeight = targetRefCurrent.clientHeight;
-      const scrollHeight = targetRefCurrent.scrollHeight;
+      const containerHeight = targetRef.clientHeight;
+      const scrollHeight = targetRef.scrollHeight;
+      const progress = targetRef.scrollTop / (scrollHeight - containerHeight);
 
-      const handleScroll = () => {
-        const progress =
-          targetRefCurrent.scrollTop / (scrollHeight - containerHeight);
+      let distance = progress * scrollHeight;
+      if (distance >= scrollHeight - ANNOTATED_BAR_HEIGHT) {
+        distance = scrollHeight - ANNOTATED_BAR_HEIGHT;
+      }
 
-        let distance = progress * scrollHeight;
-        if (distance >= scrollHeight - ANNOTATED_BAR_HEIGHT) {
-          distance = scrollHeight - ANNOTATED_BAR_HEIGHT;
-        }
-
-        setProgress({
-          percent: Math.round(progress * 100),
-          distance: `${distance}px`,
-        });
-        setShow(true);
-      };
-
-      targetRefCurrent.addEventListener("scroll", handleScroll);
-
-      return () => {
-        targetRefCurrent.removeEventListener("scroll", handleScroll);
-      };
-    }
-  }, []);
+      setProgress({
+        percent: Math.round(progress * 100),
+        distance: `${distance}px`,
+      });
+      setShow(true);
+    },
+  });
 
   useEffect(() => {
     if (show) {
