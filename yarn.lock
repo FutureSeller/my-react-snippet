@@ -1256,6 +1256,16 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
+"@faker-js/faker@^7.5.0":
+  version "7.5.0"
+  resolved "https://registry.yarnpkg.com/@faker-js/faker/-/faker-7.5.0.tgz#8e8265f65f5b68d2a57886d59b03788eeb676264"
+  integrity sha512-8wNUCCUHvfvI0gQpDUho/3gPzABffnCn5um65F8dzQ86zz6dlt4+nmAA7PQUc8L+eH+9RgR/qzy5N/8kN0Ozdw==
+
+"@h6s/table@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@h6s/table/-/table-1.0.2.tgz#7cca3367e8c6d19f97eba627c2916d0d526ff842"
+  integrity sha512-Sv69kD4SEl7U0c9VNrlggOm7cDXwywS4h3uzWKtG2rYQAGYegPXqPMdJCKx+1XadPOG7T3Rug5uSR2eXxszZeA==
+
 "@humanwhocodes/config-array@^0.10.4":
   version "0.10.4"
   resolved "https://registry.npmjs.org/@humanwhocodes/config-array/-/config-array-0.10.4.tgz"
