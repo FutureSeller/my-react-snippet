@@ -1,0 +1,11 @@
+{
+  "extends": "tsconfig/base.json",
+  "include": ["src"],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
+    "module": "es2015",
+    "target": "es6"
+  }
+}
