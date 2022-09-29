@@ -1,0 +1,23 @@
+.App {
+  padding: 16px 0;
+}
+
+.App__title {
+  text-align: center;
+}
+
+.App__Actions button {
+  float: right;
+}
+.App__Actions::after {
+  display: block;
+  content: " ";
+  clear: both;
+}
+
+.App__layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+}
