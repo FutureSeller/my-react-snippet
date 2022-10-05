@@ -7,6 +7,7 @@ import { BasicControlledFormWithMultipleStates } from "./component/BasicControll
 import { BasicControlledForm } from "./component/BasicControlledForm";
 import { BasicUncontrolledForm } from "./component/BasicUncontrolledForm";
 import { BasicDynamicRefsForm } from "./component/BasicDynamicRefsForm";
+import { CardForm } from "./component/cardform";
 
 import { ValidationFormPage } from "./pages/ValidationFormPage";
 import { ValidateManuallyForm } from "./component/ValidateManuallyForm";
@@ -47,6 +48,16 @@ function Layout() {
               validate form controls
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to="/cardform"
+              style={({ isActive }) =>
+                isActive ? { color: "red", fontWeight: 900 } : { opacity: 0.8 }
+              }
+            >
+              card form
+            </NavLink>
+          </li>
         </ul>
       </nav>
       <Outlet />
@@ -81,6 +92,7 @@ function App() {
           <Route path="validation" element={<ValidationFormPage />}>
             <Route index element={<ValidateManuallyForm />} />
           </Route>
+          <Route path="cardform" element={<CardForm />} />
         </Route>
       </Routes>
     </div>

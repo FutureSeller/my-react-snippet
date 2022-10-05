@@ -17,6 +17,7 @@
     "my-custom-hooks": "*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.36.1",
     "react-router-dom": "^6.4.1",
     "tsconfig": "*",
     "typescript": "^4.6.4",
