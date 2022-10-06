@@ -16,10 +16,14 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "devDependencies": {
+    "@chakra-ui/descendant": "^3.0.10",
+    "@chakra-ui/react-use-merge-refs": "^2.0.4",
+    "@chakra-ui/shared-utils": "^2.0.2",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^7.32.0",
     "eslint-config-custom": "*",
+    "my-custom-hooks": "*",
     "react": "^18.2.0",
     "tsconfig": "*",
     "tsup": "^6.2.3",
