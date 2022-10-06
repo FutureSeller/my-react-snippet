@@ -6,3 +6,4 @@ export * from "./use-in-view";
 export * from "./use-safe-state";
 export * from "./use-event-listener";
 export * from "./use-dynamic-ref";
+export * from "./use-controllable-state";
