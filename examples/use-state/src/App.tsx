@@ -6,6 +6,7 @@ import { BasicPage } from "./pages/BasicPage";
 import { BatchingCounterPage } from "./pages/BatchingCounterPage";
 import { FunctionalUpdatesPage } from "./pages/FunctionalUpdatesPage";
 import { DerivedStatePage } from "./pages/DerivedStatePage";
+import { StateAsPropsPage } from "./pages/StateAsPropsPage";
 
 function Layout() {
   return (
@@ -56,6 +57,17 @@ function Layout() {
               derived state
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to="/props-as-initial-state-error"
+              style={({ isActive }) =>
+                isActive ? { color: "red", fontWeight: 900 } : { opacity: 0.8 }
+              }
+              end
+            >
+              props-as-initial-state-error
+            </NavLink>
+          </li>
         </ul>
       </nav>
       <Outlet />
@@ -76,6 +88,10 @@ function App() {
             element={<FunctionalUpdatesPage />}
           />
           <Route path="/derived" element={<DerivedStatePage />} />
+          <Route
+            path="/props-as-initial-state-error"
+            element={<StateAsPropsPage />}
+          />
         </Route>
       </Routes>
     </div>
