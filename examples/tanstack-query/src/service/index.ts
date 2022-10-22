@@ -5,8 +5,8 @@ export interface GetTodo {
   todos: Todo[];
 }
 
-export const getTodos = (id: number) => {
-  return request.get<GetTodo>(`/api/todos?id=${id}`);
+export const getTodos = (userId: number) => {
+  return request.get<GetTodo>(`/api/todos?id=${userId}`);
 };
 
 export interface GetUsers {
@@ -14,10 +14,5 @@ export interface GetUsers {
 }
 
 export const getUsers = () => {
-  const propbability = Math.random();
-  if (propbability > 0.4) {
-    throw new Error("Goto Error boundary");
-  }
-
   return request.get<GetUsers>("/api/users");
 };
