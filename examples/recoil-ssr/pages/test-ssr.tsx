@@ -26,8 +26,12 @@ export default function TestSSR(
 }
 
 export const getServerSideProps = async () => {
-  const res = await fetch("http://localhost:3000/api/hello");
-  const data = await res.json();
+  try {
+    const res = await fetch("http://localhost:3000/api/hello");
+    const data = await res.json();
 
-  return { props: { initialRecoilState: { nameState: data.name } } };
+    return { props: { initialRecoilState: { nameState: data.name } } };
+  } catch (e) {
+    return { props: {} };
+  }
 };
