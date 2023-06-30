@@ -1,0 +1,28 @@
+{
+  "name": "my-custom-utils",
+  "version": "0.0.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "license": "MIT",
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --external react",
+    "dev": "tsup src/index.ts --format esm,cjs --watch --dts --external react",
+    "lint": "TIMING=1 eslint . --fix",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.24",
+    "@types/react-dom": "^18.0.8",
+    "eslint": "^8.26.0",
+    "eslint-config-custom": "*",
+    "jest": "^29.5.0",
+    "react": "^18.2.0",
+    "ts-jest": "^29.1.1",
+    "tsconfig": "*",
+    "tsup": "^6.3.0",
+    "typescript": "^4.8.4"
+  }
+}
