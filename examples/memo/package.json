@@ -1,0 +1,27 @@
+{
+  "name": "@examples/memo",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "TIMING=1 eslint src --fix",
+    "clean": "rm -rf node_modules && rm -rf dist && rm -rf .turbo"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.24",
+    "@types/react-dom": "^18.0.8",
+    "@vitejs/plugin-react": "^2.2.0",
+    "my-custom-hooks": "*",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tsconfig": "*",
+    "typescript": "^4.8.4",
+    "vite": "^3.2.0"
+  },
+  "dependencies": {
+    "react-router-dom": "^6.4.2"
+  }
+}
